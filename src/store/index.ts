@@ -7,12 +7,10 @@ export const store = createStore({
     payments: [] as Array<object>,
   },
   getters: {
-    getPayments: (state) => state.payments,
+    getPayments: (state): object[] => state.payments,
   },
   mutations: {
     setPayment(state, payload: FormObj) {
-      console.log(payload);
-      payload.itemId = state.payments.length + 1;
       state.payments.push(payload);
     },
   },

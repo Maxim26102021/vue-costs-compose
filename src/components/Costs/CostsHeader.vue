@@ -1,5 +1,5 @@
 <template>
-  <div>{{ htext }}</div>
+  <div class="header">{{ htext }}</div>
 </template>
 
 <script setup lang="ts">
@@ -10,3 +10,11 @@ interface Props {
 
 const props = defineProps<Props>();
 </script>
+
+<style scoped>
+.header {
+  text-transform: uppercase;
+  font-family: "Courier New", Courier, monospace;
+  margin: 10px;
+}
+</style>
