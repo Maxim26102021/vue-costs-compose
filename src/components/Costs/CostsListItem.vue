@@ -8,7 +8,7 @@
       </div>
       <div class="item__date parallaxed">Date: {{ props.obj.date }}</div>
     </div>
-    <button class="btn-delete" @click="deleteItem(props.order)">delete</button>
+    <button class="btn-delete" @click="deleteItem(props.order)">del</button>
   </div>
 </template>
 
@@ -56,6 +56,13 @@ function deleteItem(ind: number) {
 }
 .btn-delete {
   height: 20%;
+  padding: 3px;
+  border: none;
+  width: 50px;
+  background-color: rgba(128, 128, 128, 0.207);
+  &:hover {
+    background-color: rgb(255, 120, 120);
+  }
 }
 
 .animation {

@@ -31,14 +31,14 @@ const items: ComputedRef<Array<FormObj>> = computed(
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 400px;
   padding: 10px;
-  width: 100%;
+  width: 50%;
   position: relative;
+  justify-self: flex-end;
 }
 .item {
   min-width: 100px;
-  width: 60%;
+  width: 100%;
 }
 .list-move, /* apply transition to moving elements */
 .list-enter-active,

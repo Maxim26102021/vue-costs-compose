@@ -1,8 +1,10 @@
 <template>
-  <button class="btn" type="submit">
+  <button @click="$emit('send-action')" class="btn" type="submit">
     <span> <slot></slot> + </span>
   </button>
 </template>
+
+<script></script>
 
 <style lang="scss" scoped>
 $btnHeight: 30px;
@@ -23,7 +25,7 @@ span {
 .btn {
   position: relative;
   min-width: 20px;
-  width: 50%;
+  width: 45%;
   height: $btnHeight;
   background-color: #42e192;
   color: white;

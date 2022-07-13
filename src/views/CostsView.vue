@@ -1,13 +1,19 @@
 <template>
-  <div class="main">
+  <div class="app">
     <CostsHeader />
-    <button-component class="header-button">Show</button-component>
-    <CostsForm />
-    <CostsList />
+    <button-component @click="show = !show" class="header-button"
+      >Show</button-component
+    >
+
+    <div class="main">
+      <CostsForm v-show="show" @send-action="show = !show" />
+      <CostsList />
+    </div>
+
+    <Transition>
+      <CostsPag v-if="paymentsLengthTrue" />
+    </Transition>
   </div>
-  <Transition>
-    <CostsPag v-if="paymentsLengthTrue" />
-  </Transition>
 </template>
 
 <script setup lang="ts">
@@ -20,14 +26,20 @@ import { ref, computed } from "vue";
 import { useStore } from "@/store";
 
 const store = useStore();
+const show = ref(false);
 
 const paymentsLengthTrue = computed(() => store.getters.getPaymentsLength);
 </script>
 
 <style>
+.app {
+  height: 100vh;
+}
 .main {
   padding: 10px;
   position: relative;
+  display: flex;
+  justify-content: center;
 }
 .header-button {
   max-width: 100px;

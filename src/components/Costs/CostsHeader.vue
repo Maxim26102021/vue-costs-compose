@@ -12,6 +12,7 @@ const text = ref("My personal costs");
 .header {
   text-transform: uppercase;
   font-family: "Courier New", Courier, monospace;
+  padding: 10px;
   margin-bottom: 10px;
 }
 </style>

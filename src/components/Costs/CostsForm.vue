@@ -18,7 +18,12 @@
       v-model="formObj.date"
       placeholder="Payment date"
     />
-    <button-component>ADD</button-component>
+    <div class="btn-group">
+      <button-component>ADD</button-component>
+      <button-component @send-action="$emit('send-action')"
+        >CLOSE</button-component
+      >
+    </div>
   </form>
 </template>
 
@@ -46,6 +51,9 @@ const formObj = ref<FormObj>({
   background-color: #fff;
   padding: 15px;
   margin-top: 10px;
+  position: sticky;
+  top: 20px;
+  max-height: 200px;
   &__input {
     margin-bottom: 5px;
     display: inline-block;
@@ -59,5 +67,9 @@ const formObj = ref<FormObj>({
       opacity: 0.5;
     }
   }
+}
+.btn-group {
+  display: flex;
+  justify-content: space-between;
 }
 </style>
