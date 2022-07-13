@@ -1,13 +1,11 @@
 <template>
   <div class="wrapper" ref="item">
-    <div class="item">
-      <div class="item__id parallaxed">Order: {{ props.order + 1 }}</div>
-      <div class="item__amount parallaxed">Amount: {{ props.obj.amount }}</div>
-      <div class="item__descr parallaxed">
-        Description: {{ props.obj.description }}
-      </div>
-      <div class="item__date parallaxed">Date: {{ props.obj.date }}</div>
+    <div class="wrapper__item parallaxed">Order: {{ props.order + 1 }}</div>
+    <div class="wrapper__item parallaxed">Amount: {{ props.obj.amount }}</div>
+    <div class="wrapper__item parallaxed">
+      Description: {{ props.obj.description }}
     </div>
+    <div class="wrapper__item parallaxed">Date: {{ props.obj.date }}</div>
     <button class="btn-delete" @click="deleteItem(props.order)">del</button>
   </div>
 </template>
@@ -49,17 +47,26 @@ function deleteItem(ind: number) {
   transition: 0.5s;
   padding: 5px;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
+  position: relative;
+  &__item {
+    max-width: 100%;
+    word-wrap: break-word;
+  }
   &:hover {
     background-color: #fff;
   }
 }
 .btn-delete {
+  opacity: 0.7;
   height: 20%;
   padding: 3px;
   border: none;
   width: 50px;
   background-color: rgba(128, 128, 128, 0.207);
+  position: absolute;
+  right: 5px;
   &:hover {
     background-color: rgb(255, 120, 120);
   }

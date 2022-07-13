@@ -18,6 +18,9 @@ export const store = createStore({
     deleteItemFromList(state, payloadId: number) {
       state.payments.splice(payloadId, 1);
     },
+    clearPayments(state) {
+      state.payments = [];
+    },
   },
   actions: {
     addPayment: ({ commit }, obj) => {

@@ -19,8 +19,8 @@
       placeholder="Payment date"
     />
     <div class="btn-group">
-      <button-component>ADD</button-component>
-      <button-component @send-action="$emit('send-action')"
+      <button-component>ADD +</button-component>
+      <button-component :color="'red'" @send-action="$emit('send-action')"
         >CLOSE</button-component
       >
     </div>
@@ -33,9 +33,7 @@ import { FormObj } from "@/model/costs";
 import { ref } from "vue";
 import { addToStore } from "@/components/Costs/api/addPayment";
 
-const addPayment = (): void => {
-  addToStore(formObj.value);
-};
+const addPayment = (): void => addToStore(formObj.value);
 
 const formObj = ref<FormObj>({
   description: "",

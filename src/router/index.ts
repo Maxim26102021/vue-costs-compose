@@ -1,11 +1,17 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
-import CostsView from "../views/CostsView.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
     name: "home",
-    component: CostsView,
+    component: () =>
+      import(/* webpackChunkName: "Home" */ "@/views/HomePage.vue"),
+  },
+  {
+    path: "/costs",
+    name: "costs",
+    component: () =>
+      import(/* webpackChunkName: "Costs" */ "@/views/CostsView.vue"),
   },
 ];
 
