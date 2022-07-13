@@ -25,7 +25,7 @@ span {
   min-width: 20px;
   width: 50%;
   height: $btnHeight;
-  background-color: #42f59b;
+  background-color: #42e192;
   color: white;
   border: none;
   border-radius: $borderRadius;
@@ -38,7 +38,7 @@ span {
     top: 0;
     position: absolute;
     height: $btnHeight;
-    background-color: #c242f5;
+    background-color: #62e6af;
     opacity: 0.4;
     animation: buttonAnimation 3s infinite;
   }

@@ -1,20 +1,17 @@
 <template>
-  <div class="header">{{ htext }}</div>
+  <div class="header">{{ text }}</div>
 </template>
 
 <script setup lang="ts">
-import { defineProps } from "vue";
-interface Props {
-  htext?: string;
-}
+import { ref } from "vue";
 
-const props = defineProps<Props>();
+const text = ref("My personal costs");
 </script>
 
 <style scoped>
 .header {
   text-transform: uppercase;
   font-family: "Courier New", Courier, monospace;
-  margin: 10px;
+  margin-bottom: 10px;
 }
 </style>

@@ -25,35 +25,39 @@
 <script setup lang="ts">
 import ButtonComponent from "@/components/ui/ButtonComponent";
 import { FormObj } from "@/model/costs";
-import { reactive } from "vue";
+import { ref } from "vue";
 import { addToStore } from "@/components/Costs/api/addPayment";
-import { useStore } from "@/store";
 
-const store = useStore();
-
-const addPayment = () => {
-  formObj.itemId = store.getters.getPayments.length + 1;
-  store.commit("setPayment", formObj);
+const addPayment = (): void => {
+  addToStore(formObj.value);
 };
 
-const formObj = reactive<FormObj>({
+const formObj = ref<FormObj>({
   description: "",
   amount: 0,
   date: "",
-  itemId: 0,
 });
 </script>
 
 <style lang="scss" scoped>
 .form {
-  max-width: 50%;
+  width: 50%;
+  max-width: 500px;
   background-color: #fff;
   padding: 15px;
+  margin-top: 10px;
   &__input {
     margin-bottom: 5px;
     display: inline-block;
     height: 30px;
     width: 100%;
+    padding-left: 10px;
+    outline: none;
+    border: 1px solid rgba(169, 167, 167, 0.271);
+    &::placeholder {
+      text-transform: uppercase;
+      opacity: 0.5;
+    }
   }
 }
 </style>

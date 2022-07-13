@@ -8,13 +8,22 @@ export const store = createStore({
   },
   getters: {
     getPayments: (state): object[] => state.payments,
+    getPaymentsLength: (state): number => state.payments.length,
   },
   mutations: {
     setPayment(state, payload: FormObj) {
+      payload.itemId = state.payments.length + 1;
       state.payments.push(payload);
     },
+    deleteItemFromList(state, payloadId: number) {
+      state.payments.splice(payloadId, 1);
+    },
   },
-  actions: {},
+  actions: {
+    addPayment: ({ commit }, obj) => {
+      commit("setPayment", { ...obj });
+    },
+  },
   modules: {},
 });
 
