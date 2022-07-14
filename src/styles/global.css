@@ -11,6 +11,7 @@ body {
 
 body::-webkit-scrollbar {
   width: 0.25rem;
+  height: 2px;
 }
 
 body::-webkit-scrollbar-track {
@@ -20,4 +21,8 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
   background: #a7a7a7;
   height: 50px;
+}
+.app {
+  height: 100vh;
+  padding: 10px;
 }

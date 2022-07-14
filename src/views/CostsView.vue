@@ -12,10 +12,10 @@
       <CostsForm v-show="show" @send-action="show = !show" />
       <CostsList />
     </div>
+    <transition>
+      <CostsPag v-if="paymentsLengthTrue" />
+    </transition>
   </div>
-  <Transition>
-    <CostsPag v-if="paymentsLengthTrue" />
-  </Transition>
 </template>
 
 <script setup lang="ts">
@@ -24,21 +24,21 @@ import CostsForm from "@/components/Costs/CostsForm";
 import CostsList from "@/components/Costs/CostsList";
 import CostsPag from "@/components/Costs/CostsPag";
 import ButtonComponent from "@/components/ui/ButtonComponent";
-import { ref, computed } from "vue";
+import { ref, computed, onMounted } from "vue";
 import { useStore } from "@/store";
+import { useRouter } from "@/router";
 
 const store = useStore();
+const router = useRouter();
 const show = ref(false);
 
 const paymentsLengthTrue = computed(() => store.getters.getPaymentsLength);
 const clearAll = () => store.commit("clearPayments");
+
+onMounted(() => console.log(router));
 </script>
 
 <style scoped>
-.app {
-  height: 100vh;
-  padding: 10px;
-}
 .main {
   padding: 10px;
   position: relative;

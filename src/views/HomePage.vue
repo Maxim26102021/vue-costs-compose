@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="app">
     <h1>HOME PAGE</h1>
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam ullam,

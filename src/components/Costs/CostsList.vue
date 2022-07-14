@@ -21,7 +21,7 @@ import { ComputedRef } from "vue";
 const store = useStore();
 
 const items: ComputedRef<Array<FormObj>> = computed(
-  (): Array<FormObj> => store.getters.getPayments
+  (): Array<FormObj> => store.getters.getPaymentsPage
 );
 </script>
 

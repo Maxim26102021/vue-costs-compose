@@ -13,9 +13,9 @@
 <script setup lang="ts">
 import { FormObj } from "@/model/costs";
 import { defineProps, ref, Ref, PropType } from "vue";
-import { parallaxed, unParallax } from "@/components/Costs/api/parallaxed";
-import { deleteAnimation } from "@/components/Costs/api/deletingItem";
-import { useStore } from "@/store";
+import { useStore } from "@/store/index";
+// import { parallaxed, unParallax } from "@/components/Costs/api/parallaxed";
+// import { deleteAnimation } from "@/components/Costs/api/deletingItem";
 
 const props = defineProps({
   obj: {
